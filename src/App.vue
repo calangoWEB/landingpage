@@ -17,6 +17,12 @@ export default {
     Appbar,
   },
 
+  watch: {
+    $route(to, from) {
+      document.title = to.meta.title || "Landing Page";
+    },
+  },
+
   data: () => ({
     //
   }),

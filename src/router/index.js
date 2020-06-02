@@ -8,6 +8,17 @@ const routes = [
     path: "/",
     name: "Home",
     component: () => import("../views/Home.vue"),
+    meta: {
+      title: "Landing Page Vuetify",
+    },
+  },
+  {
+    path: "*",
+    name: "NotFound",
+    component: () => import("../views/NotFound.vue"),
+    meta: {
+      title: "Página não encontrada!",
+    },
   },
 ];
 
