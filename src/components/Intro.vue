@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="hero">
     <v-container class="pa-0" style="display:contents">
       <v-parallax
         dark

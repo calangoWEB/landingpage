@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container id="sobre">
     <v-row justify="center">
       <v-col cols="12" sm="4" class="d-none d-sm-flex">
         <v-img

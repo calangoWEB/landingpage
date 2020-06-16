@@ -1,5 +1,5 @@
 <template>
-  <v-footer dark padless>
+  <v-footer dark padless id="contatos">
     <v-card
       flat
       tile

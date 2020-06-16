@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar app :color="color" dark>
+    <v-app-bar app :color="color" dark :flat="flat">
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
@@ -19,21 +19,21 @@
         v-if="isSm"
       />
       <div v-else>
-        <v-btn text>
+        <v-btn text @click="$vuetify.goTo('#hero', 0, 500)">
           <span class="mr-2">Home</span>
         </v-btn>
-        <v-btn text>
+        <v-btn text @click="$vuetify.goTo('#sobre', 0, 500)">
           <span class="mr-2">Sobre</span>
         </v-btn>
-        <v-btn text>
+        <v-btn text @click="$vuetify.goTo('#servicos', 0, 500)">
           <span class="mr-2">Serviços</span>
         </v-btn>
-        <v-btn text>
+        <v-btn text @click="$vuetify.goTo('#contatos', 0, 500)">
           <span class="mr-2">Contatos</span>
         </v-btn>
       </div>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" absolute temporary>
+    <v-navigation-drawer v-model="drawer" app temporary>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title">Título ou logo</v-list-item-title>
@@ -43,22 +43,22 @@
       <v-divider></v-divider>
 
       <v-list dense>
-        <v-list-item link>
+        <v-list-item link @click="$vuetify.goTo('#hero', 0, 500)">
           <v-list-item-content>
             <v-list-item-title class="title">Home</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link>
+        <v-list-item link @click="$vuetify.goTo('#sobre', 0, 500)">
           <v-list-item-content>
             <v-list-item-title class="title">Sobre</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link>
+        <v-list-item link @click="$vuetify.goTo('#servicos', 0, 500)">
           <v-list-item-content>
             <v-list-item-title class="title">Serviços</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link>
+        <v-list-item link @click="$vuetify.goTo('#contatos', 0, 500)">
           <v-list-item-content>
             <v-list-item-title class="title">Contatos</v-list-item-title>
           </v-list-item-content>
@@ -76,6 +76,7 @@ export default {
   }),
   props: {
     color: String,
+    flat: Boolean,
   },
   beforeDestroy() {
     if (typeof window !== "undefined") {

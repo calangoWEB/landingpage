@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Appbar :color="color" />
+    <Appbar :color="color" :flat="flat"/>
     <v-content class="pt-0">
       <router-view />
     </v-content>
@@ -35,12 +35,14 @@ export default {
   data: () => ({
     fab: null,
     color: "",
+    flat: true,
   }),
 
   created() {
     const top = window.pageYOffset || 0;
     if (top <= 20) {
       this.color = "transparent";
+      this.flat = true;
     }
   },
 
@@ -51,8 +53,10 @@ export default {
     fab(value) {
       if (value) {
         this.color = "secondary";
+      this.flat = false;
       } else {
         this.color = "transparent";
+      this.flat = true;
       }
     },
   },
